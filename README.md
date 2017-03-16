@@ -75,7 +75,7 @@ Add new type
 
 * `type_name` **String** name of type
 * `error_data` **Any** error object return when invalid data.
-* `validate` **Function** function validate data: Can be yourself function or using [joi] (http://badge.fury.io/js/joi) module
+* `validate` **Function** function validate data: Can be yourself function or using [joi](http://badge.fury.io/js/joi) module
 
 Your function
 ```javascript
