@@ -1,0 +1,33 @@
+{
+  "name": "form-validation-thieny",
+  "version": "1.0.1",
+  "description": "validate javascript form data object on API",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conglq/thieny.git"
+  },
+  "keywords": [
+    "validate",
+    "object",
+    "thieny",
+    "form",
+    "joi",
+    "extension"
+  ],
+  "author": "Le Quang Cong <leqcong@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/conglq/thieny/issues"
+  },
+  "homepage": "https://github.com/conglq/thieny/blob/master/README.md",
+  "devDependencies": {
+    "chai": "^3.5.0"
+  },
+  "dependencies": {
+    "joi": "^10.2.2"
+  }
+}
