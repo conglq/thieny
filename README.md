@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/conglq/thieny.svg?branch=master)](https://travis-ci.org/conglq/thieny)
+
 # Introduction
 This lib use for validate javascript form data object send to API before we using this data. Reuse any type of data we defined.
 
