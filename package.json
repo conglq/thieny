@@ -2,6 +2,7 @@
   "name": "form-validation-thieny",
   "version": "1.0.1",
   "description": "validate javascript form data object on API",
+  "author": "Cong Le",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test"
