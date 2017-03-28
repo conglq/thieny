@@ -36,6 +36,7 @@ console.log(result);
 //   value: {}
 // }
 ```
+Try [Online Demo](https://runkit.com/58da2ab7d8323e0014c97ed6/58da2ab7d8323e0014c97ed7)
 
 Before do validate, just defined object type for email
 
