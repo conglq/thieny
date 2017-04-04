@@ -7,11 +7,12 @@ describe('Testing', () => {
   it('init', () => {
     thieny = require('../index');
     expect(thieny).to.be.a('object');
+    expect(thieny).to.have.property('type_object').that.to.be.a('object');
   });
 
 
   it('method work', () => {
-    let result = thieny.required().optional().validate()
+    let result = thieny.required().optional().validate();
     expect(result).to.be.a('object');
     expect(result).to.have.property('error').that.to.be.null;
     expect(result).to.have.property('value').to.be.a('object');
@@ -46,7 +47,6 @@ describe('Testing', () => {
           }
         }
       });
-
 
       expect(result).to.be.true;
     });

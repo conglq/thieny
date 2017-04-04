@@ -1,6 +1,6 @@
 {
   "name": "form-validation-thieny",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "validate javascript form data object on API",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,8 @@
   },
   "keywords": [
     "validate",
+    "validation",
+    "validator",
     "object",
     "thieny",
     "form",

@@ -38,7 +38,7 @@ console.log(result);
 ```
 Try [Online Demo](https://runkit.com/58da2ab7d8323e0014c97ed6/58da2ab7d8323e0014c97ed7)
 
-Before do validate, just defined object type for email
+Before do validate, just defined object type and put them when your app start (run first)
 
 ```javascript
 // add new type defined email type and error that you want to response
