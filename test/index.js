@@ -1,7 +1,11 @@
 var expect = require('chai').expect;
 
 
+'use strict'
+
 describe('Testing', () => {
+  'use strict'
+
   let thieny;
 
   it('init', () => {
