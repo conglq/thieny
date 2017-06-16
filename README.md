@@ -13,8 +13,8 @@ let data = {
   new_email: 'new_email@testing.local'
 };
 
-let result = thieny.required('email')
-                    .optional('new_email', 'old_email')
+let result = thieny.required('email') // could be array ['email']
+                    .optional('new_email', 'old_email') // could be array ['new_email', 'old_email']
                     .validate(data);
 
 console.log(result);
@@ -114,10 +114,10 @@ validate: str => {
     * `error_data` *optional* error object return when invalid data
 
 ## required
-List of field are required in input data
+List of field (**arg** or **array**) are required in input data
 
 ## optional
-List of field are optional in input data
+List of field (**arg** or **array**) are optional in input data
 
 ## validate
 Validate an object data

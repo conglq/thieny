@@ -68,6 +68,20 @@ describe('Testing', () => {
       expect(result.value).to.not.have.property('old_email');
     });
 
+    it('validate work with array arg ', () => {
+      let result = thieny.required(['email']).optional(['new_email', 'old_email']).validate({
+        email: 'testing@testing.local',
+        new_email: 'new_email@testing.local',
+        old_email: 'old_email@testing.local',
+      })
+
+      expect(result).to.be.a('object');
+      expect(result).to.have.property('error').that.to.be.null;
+      expect(result).to.have.property('value').to.be.a('object').to.have.property('email').to.eq('testing@testing.local');
+      expect(result.value.new_email).to.eq('new_email@testing.local');
+      expect(result.value.old_email).to.eq('old_email@testing.local');
+    });
+
     it('validate work return error', () => {
       let result = thieny.required('email').optional().validate({
         email: ''
