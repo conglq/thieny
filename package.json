@@ -1,7 +1,7 @@
 {
   "name": "form-validation-thieny",
-  "version": "1.2.2",
-  "description": "validate javascript form data object on API",
+  "version": "2.0.0",
+  "description": "Validate input data",
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha ./test"
@@ -30,6 +30,6 @@
     "chai": "^3.5.0"
   },
   "dependencies": {
-    "joi": "^10.2.2"
+    "@hapi/joi": "^16.1.8"
   }
 }

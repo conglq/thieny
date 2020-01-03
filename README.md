@@ -78,7 +78,7 @@ Add new type
 
 * `type_name` **String** name of type
 * `error_data` **Any** error object return when invalid data.
-* `validate` **Function** function validate data: Can be yourself function or using [joi](http://badge.fury.io/js/joi) module
+* `validate` **Function** function validate data: Can be yourself function or using [@hapi/joi](https://hapi.dev/family/joi/) module
 
 Your function
 ```javascript
@@ -96,20 +96,20 @@ validate: str => {
 }
 ```
 
-Using **joi**
-Reference [API Reference](https://github.com/hapijs/joi/blob/master/API.md).
+Using **@hapi/joi**
+Reference [API Reference](https://hapi.dev/family/joi/).
 
 ```javascript
 validate: str => {
-  // using joi
-  return thieny.joi.validate(str, thieny.joi.string().trim().replace(/[^0-9]/g, '').length(10));
+  // using @hapi/joi
+  return thieny.joi.string().trim().replace(/[^0-9]/g, '').length(10).validate(str);
 }
 ```
 
   Return an object
   * `error` **Boolean** *optional* true/false
   * `value` **Any** value of input after validate
-* `field_names` **Araay** *optional* list of fields had the same type
+* `field_names` **Array** *optional* list of fields had the same type
     * `name`
     * `error_data` *optional* error object return when invalid data
 

@@ -1,4 +1,4 @@
-var expect = require('chai').expect;
+const expect = require('chai').expect;
 
 
 'use strict'
@@ -6,23 +6,27 @@ var expect = require('chai').expect;
 describe('Testing', () => {
   'use strict'
 
-  let thieny;
+  describe('Initial', () => {
+    let thieny;
 
-  it('init', () => {
-    thieny = require('../index');
-    expect(thieny).to.be.a('object');
-    expect(thieny).to.have.property('type_object').that.to.be.a('object');
+    it('init', () => {
+      thieny = require('../index');
+      expect(thieny).to.be.a('object');
+      expect(thieny).to.have.property('type_object').that.to.be.a('object');
+    });
+  
+  
+    it('method work', () => {
+      let result = thieny.required().optional().validate();
+      expect(result).to.be.a('object');
+      expect(result).to.have.property('error').that.to.be.null;
+      expect(result).to.have.property('value').to.be.a('object');
+    });
   });
-
-
-  it('method work', () => {
-    let result = thieny.required().optional().validate();
-    expect(result).to.be.a('object');
-    expect(result).to.have.property('error').that.to.be.null;
-    expect(result).to.have.property('value').to.be.a('object');
-  });
+ 
 
   describe('Normal type', () => {
+    const thieny = require('../index');
     it('add type work', () => {
       let result = thieny.add_type({
         type_name: 'email',
@@ -110,6 +114,7 @@ describe('Testing', () => {
   });
 
   describe('Using Joi/happy.js', () => {
+    const thieny = require('../index');
     it('add type with joi', () => {
       let result = thieny.add_type({
         type_name: 'phone',
@@ -118,14 +123,14 @@ describe('Testing', () => {
           msg: 'Invalid phone'
         },
         validate: str => {
-          return thieny.joi.validate(str, thieny.joi.string().trim().replace(/[^0-9]/g, '').length(10));
+          return thieny.joi.string().trim().replace(/[^0-9]/g, '').length(10).validate(str);
         }
       });
       expect(result).to.be.true;
     });
 
 
-    it('validate work success', () => {
+    it('validate valid phone', () => {
       let result = thieny.required('phone').optional().validate({
         phone: '0123456789a'
       });
@@ -133,6 +138,15 @@ describe('Testing', () => {
       expect(result).to.be.a('object');
       expect(result).to.have.property('error').that.to.be.null;
       expect(result).to.have.property('value').to.be.a('object').to.have.property('phone').to.eq('0123456789');
+    });
+    
+    it('validate invalid phone', () => {
+      let result = thieny.required('phone').optional().validate({
+        phone: '01234567819aa'
+      });
+
+      expect(result).to.be.a('object');
+      expect(result).to.have.property('error').to.be.a('object').to.have.property('code').to.eq(2);
     });
   });
 
